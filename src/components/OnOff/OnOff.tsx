@@ -1,34 +1,28 @@
 import React from 'react';
-import './OnOff..css'
-
-const OnOff = (props: any) => {
-    return (
-        <div className={'wrapper'}>
-            <div style={{
-                backgroundColor: 'blue',
-                width: '700px',
-                height: '300px',
-                display: 'block',
-
-            }}>
-                on
-            </div>
-            <div style={{
-                backgroundColor: 'green',
-                width: '700px',
-                height: '300px',
-                display: 'block',
-
-            }}>
 
 
-                off
-            </div>
-            ;
-            <div style={{borderRadius: '100%', backgroundColor: 'blue', width: '700px'}}>круг</div>;
-        </div>
-    )
-        ;
-};
+type PropsType = {
+    on: boolean
+}
 
-export default OnOff;
+
+export const OnOff = (props: PropsType) => {
+
+    const onStyle = {}
+    const offStyle= {}
+    const indicatorStyle= {
+        width: '10px',
+        height: '10px',
+        borderRadius: '5px',
+        border: '1px solid black'
+    }
+return (
+    <div>
+
+        <div></div>
+        <div></div>
+        <div style={indicatorStyle}></div>
+    </div>
+)
+
+}
