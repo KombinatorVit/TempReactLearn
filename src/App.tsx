@@ -1,5 +1,5 @@
 import React from 'react';
-// import './App.css';
+import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from './components/OnOff/OnOff';
@@ -9,7 +9,7 @@ function App() {
 
     console.log('App rendering')
     return (
-        <div>
+        <div className={'App'}>
             <PageTitle title={'PageTitle component'}/>
             <PageTitle title={'Main Text'}/>
 
