@@ -6,14 +6,14 @@ import AccordionBody from './AccordionBody/AccordionBody';
 type AccordionPropsType = {
     title: string,
     collapsed: boolean
+    onChange: ()=> void
 }
 
 function UncontrolledAccordion(props: AccordionPropsType) {
 
         return <div>
-            <AccordionTitle title2={props.title}/>
-
-            {!props.collapsed && <AccordionBody/>}
+            <AccordionTitle title2={props.title} onChange={props.onChange}/>
+            {!props.collapsed && <AccordionBody />}
 
         </div>;
 
@@ -21,20 +21,5 @@ function UncontrolledAccordion(props: AccordionPropsType) {
 
 
 
-function Accordion2(props: AccordionPropsType) {
-    if (props.collapsed) {
-        return <div>
-            <AccordionTitle title2={props.title}/>
-            <AccordionTitle title2={props.title}/>
-
-            <AccordionBody/>
-
-        </div>;
-    } else {
-        return <div>
-            <AccordionTitle title2={props.title}/>
-        </div>;
-    }
-}
 
 export default UncontrolledAccordion;
