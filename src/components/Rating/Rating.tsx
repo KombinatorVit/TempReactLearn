@@ -1,4 +1,5 @@
 import React from "react";
+import {rename} from 'fs';
 
 type RatingPropsType = {
     value: number
@@ -21,14 +22,12 @@ export function Rating(props: RatingPropsType) {
 
 type StarPropsType = {
     selected: boolean
+    setValue?: (value:number)=> void
 }
-const Star = (props: StarPropsType) => {
+
+export const Star = (props: StarPropsType) => {
     console.log('Star rendering')
-    if(props.selected){
-        return <span>  <b>Star</b> </span>
-    } else {
-        return <span>  Star </span>
 
-    }
 
+return <span>{ props.selected ? <b>Star</b> : 'Star'}</span>
 }
