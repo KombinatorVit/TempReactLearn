@@ -10,7 +10,7 @@ import {UncontrilledOnOff} from './components/OnOff/UncontrolledOnOff';
 function App() {
 
     let [ratingValue, setRatingValue] = useState<0|1|2|3|4|5>(1)
-    let [controlledAccordionCollapsed, setControlledAccordionCollapsed] = useState<boolean>(false)
+    let [collapsed, setControlledAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(true)
 
     console.log('App rendering');
@@ -19,24 +19,25 @@ function App() {
             {/*<PageTitle title={'PageTitle component'}/>*/}
             {/*<PageTitle title={'Main Text'}/>*/}
             {/*/!*<Rating value={0}/>*!/*/}
-            <UncontrolledAccordion title={'Users'} collapsed={controlledAccordionCollapsed}
-            onChange={() => {setControlledAccordionCollapsed(!controlledAccordionCollapsed)}}/>
-            <Rating value={ratingValue}/>
+            {/*<UncontrolledAccordion title={'Users'} collapsed={collapsed}/>*/}
+            {/*<Rating value={ratingValue}/>*/}
 
-            {/*<UncontrolledRating />*/}
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1} />*/}
-            {/*<Rating value={3} />*/}
-            {/*<Rating value={3} />*/}
-            {/*<Rating value={4} />*/}
-            {/*<Rating value={5} />*/}
+
+            <Rating value={3} />
+
             {/*<div>1</div>*/}
             {/*<div>2</div>*/}
             {/*<div>3</div>*/}
             {/*<div>4</div>*/}
             {/*<div>5</div>*/}
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
             <UncontrilledOnOff on={switchOn} onChange={setSwitchOn}/>
-            {/*<OnOff on={false}/>*/}
+            {/*<OnOff on={false} onChange={onChange}/>*/}
 
 
         </div>
