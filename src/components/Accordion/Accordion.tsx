@@ -1,6 +1,16 @@
-import React from "react";
+import React from 'react';
 
-function AccordionBody() {
+const Accordion = () => {
+    return (
+        <div>
+            <AccordionBody />
+        </div>
+    );
+};
+
+
+
+export function AccordionBody() {
     return <>
 
         <ul>
@@ -19,4 +29,4 @@ function AccordionBody() {
     </>;
 }
 
-export default AccordionBody;
+export default Accordion;

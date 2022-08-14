@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import AccordionBody from './AccordionBody/AccordionBody';
+import { AccordionBody } from './Accordion';
 
 
 type AccordionPropsType = {
