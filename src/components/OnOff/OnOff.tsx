@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 
 type PropsType = {
     on: boolean
-    onChange:(on:boolean)=> void
 }
 
 
@@ -44,8 +43,8 @@ export const OnOff = (props: PropsType) => {
     return (
         <div>
 
-            <div style={onStyle} onClick={()=> {props.onChange(false)}}>ON</div>
-            <div style={offStyle} onClick={()=> {props.onChange(true)}}>OFF</div>
+            <div style={onStyle}>ON</div>
+            <div style={offStyle} >OFF</div>
             <div style={indicatorStyle} ></div>
         </div>
     );
