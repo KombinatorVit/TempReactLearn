@@ -11,8 +11,8 @@ import Accordion from './components/Accordion/Accordion';
 function App() {
 
     let [ratingValue, setRatingValue] = useState<0|1|2|3|4|5>(1)
-    let [collapsed, setControlledAccordionCollapsed] = useState<boolean>(false)
-    let [switchOn, setSwitchOn] = useState<boolean>(true)
+    // let [collapsed, setControlledAccordionCollapsed] = useState<boolean>(false)
+    // let [switchOn, setSwitchOn] = useState<boolean>(true)
 
     console.log('App rendering');
 
@@ -21,41 +21,34 @@ function App() {
         <div className={'App'}>
             {/*<PageTitle title={'PageTitle component'}/>*/}
             {/*<PageTitle title={'Main Text'}/>*/}
-            <Rating value={5}/>
-            <Rating value={3}/>
-            <Rating value={5}/>
-            {/*<UncontrolledAccordion title={'Users'} collapsed={collapsed}/>*/}
+            {/*<Rating value={5}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={5}/>*/}
             {/*<Rating value={ratingValue}/>*/}
+<UncontrolledAccordion title={'РРР'} />
+            <UncontrolledRating />
 
-
-            <Rating value={3} />
-
-
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
             {/*<UncontrilledOnOff on={switchOn} onChange={setSwitchOn}/>*/}
-            <OnOff on={false} />
-            <Accordion collapsed={true}/>
-            <Accordion collapsed={false}/>
+            {/*<OnOff on={false} />*/}
+            {/*<OnOff on={true} />*/}
+            {/*<OnOff on={false} />*/}
+            {/*<Accordion collapsed={true}/>*/}
+            {/*<Accordion collapsed={false}/>*/}
 
         </div>
     );
 }
 
 
-type PageTitlePropsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    return (
-        <h1> {props.title}</h1>
-    );
-}
+// type PageTitlePropsType = {
+//     title: string
+// }
+//
+// function PageTitle(props: PageTitlePropsType) {
+//     return (
+//         <h1> {props.title}</h1>
+//     );
+// }
 
 export default App;
 
