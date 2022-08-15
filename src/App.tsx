@@ -1,19 +1,18 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Rating} from './components/Rating/Rating';
+import {Rating, RatingValueType} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
 
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
-import {UncontrilledOnOff} from './components/OnOff/UncontrolledOnOff';
 import Accordion from './components/Accordion/Accordion';
-import RandomNumber from './components/RandomNumber/RundomNumber';
+import {UncontrilledOnOff} from './components/OnOff/UncontrolledOnOff';
 
 function App() {
 
-    let [ratingValue, setRatingValue] = useState<0|1|2|3|4|5>(1)
-    // let [collapsed, setControlledAccordionCollapsed] = useState<boolean>(false)
-    // let [switchOn, setSwitchOn] = useState<boolean>(true)
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(5)
+    let [accordionCollapsed, setControlledAccordionCollapsed] = useState< boolean>(false)
+    let [switchOn, setSwitchOn] = useState<boolean>(true)
 
     console.log('App rendering');
 
@@ -23,18 +22,18 @@ function App() {
             {/*<PageTitle title={'PageTitle component'}/>*/}
             {/*<PageTitle title={'Main Text'}/>*/}
             {/*<Rating value={5}/>*/}
-            {/*<Rating value={3}/>*/}
+            <Rating value={ratingValue} onClick={setRatingValue}/>
             {/*<Rating value={5}/>*/}
             {/*<Rating value={ratingValue}/>*/}
-<UncontrolledAccordion title={'РРР'} />
+{/*<UncontrolledAccordion title={'РРР'} />*/}
             <UncontrolledRating />
 
-            {/*<UncontrilledOnOff on={switchOn} onChange={setSwitchOn}/>*/}
-            {/*<OnOff on={false} />*/}
+            <UncontrilledOnOff on={switchOn} onChange={()=>setSwitchOn(!switchOn)} />
+            <OnOff on={false} />
             {/*<OnOff on={true} />*/}
             {/*<OnOff on={false} />*/}
-            {/*<Accordion collapsed={true}/>*/}
-            {/*<Accordion collapsed={false}/>*/}
+            <Accordion accordionCollapsed={accordionCollapsed} title={'Пиво'} setControlledAccordionCollapsed={()=>{setControlledAccordionCollapsed(!accordionCollapsed)}}/>
+
 
         </div>
     );

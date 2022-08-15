@@ -1,15 +1,17 @@
 import React from 'react';
 
-type AccordionPropsType = {
-    collapsed?:boolean
+export type AccordionPropsType = {
+    accordionCollapsed:boolean
+    title: string
+    setControlledAccordionCollapsed: (accordionCollapsed:boolean)=> void
 }
-const Accordion = ({collapsed}: AccordionPropsType) => {
+const Accordion = ({accordionCollapsed, title,setControlledAccordionCollapsed}: AccordionPropsType) => {
 
 
         return (
             <div>
-
-                {!collapsed && <AccordionBody />}
+<AccordionTitle title={title} setControlledAccordionCollapsed={setControlledAccordionCollapsed} accordionCollapsed={accordionCollapsed}/>
+                {!accordionCollapsed && <AccordionBody />}
             </div>
         );
 
@@ -40,18 +42,18 @@ export function AccordionBody() {
 
 type AccordionTitlePropsType = {
     title: string
-    setCollapsed: (collapsed:boolean) => void
-    collapsed?: boolean
+    setControlledAccordionCollapsed: (accordionCollapsed:boolean) => void
+    accordionCollapsed: boolean
 }
 
-export function AccordionTitle(props: AccordionTitlePropsType){
+export function   AccordionTitle(props: AccordionTitlePropsType){
 
-    function onClickSetCollapsed(){
-        props.setCollapsed(!props.collapsed)}
-
+    function onClick() {
+        props.setControlledAccordionCollapsed(!props.accordionCollapsed)
+    }
 
     return (
-        <h3 onClick={onClickSetCollapsed}>--{props.title}-- {props.collapsed}</h3>
+        <h3 onClick={onClick}>--{props.title}-- </h3>
     )
 
 }
