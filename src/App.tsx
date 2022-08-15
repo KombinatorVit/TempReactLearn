@@ -15,7 +15,9 @@ function App() {
     let [switchOn, setSwitchOn] = useState<boolean>(true)
 
     console.log('App rendering');
+function onChange() {
 
+}
 
     return (
         <div className={'App'}>
