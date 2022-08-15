@@ -35,7 +35,6 @@ function App() {
             {/*<OnOff on={false} />*/}
             {/*<Accordion collapsed={true}/>*/}
             {/*<Accordion collapsed={false}/>*/}
-            <RandomNumber />
 
         </div>
     );
