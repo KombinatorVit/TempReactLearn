@@ -7,6 +7,7 @@ import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import {UncontrilledOnOff} from './components/OnOff/UncontrolledOnOff';
 import Accordion from './components/Accordion/Accordion';
+import RandomNumber from './components/RandomNumber/RundomNumber';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
             {/*<OnOff on={false} />*/}
             {/*<Accordion collapsed={true}/>*/}
             {/*<Accordion collapsed={false}/>*/}
+            <RandomNumber />
 
         </div>
     );
