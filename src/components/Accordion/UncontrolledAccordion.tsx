@@ -12,7 +12,7 @@ function UncontrolledAccordion(props: AccordionPropsType) {
     return <div>
             {/*<AccordionTitle title={props.title} onClick={(collapsed:boolean) => {setCollapsed(!collapsed)}}/>*/}
 
-            {collapsed && <AccordionBody />}
+            {/*{collapsed && <AccordionBody />}*/}
 
         </div>;
 

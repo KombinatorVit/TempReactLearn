@@ -1,39 +1,50 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-export type AccordionPropsType = {
-    accordionCollapsed:boolean
+type ItemType = {
     title: string
-    setControlledAccordionCollapsed: (accordionCollapsed:boolean)=> void
+    value: any
 }
-const Accordion = ({accordionCollapsed, title,setControlledAccordionCollapsed}: AccordionPropsType) => {
+export type AccordionPropsType = {
+    accordionCollapsed: boolean
+    title: string
+    setControlledAccordionCollapsed: (accordionCollapsed: boolean) => void
+    items: Array<ItemType>
+    onClick: (value: any) => void
+}
+const Accordion = ({
+                       accordionCollapsed,
+                       title,
+                       setControlledAccordionCollapsed,
+                       items,
+                       onClick
+                   }: AccordionPropsType) => {
 
 
-        return (
-            <div>
-<AccordionTitle title={title} setControlledAccordionCollapsed={setControlledAccordionCollapsed} accordionCollapsed={accordionCollapsed}/>
-                {!accordionCollapsed && <AccordionBody />}
-            </div>
-        );
 
+    return (
+        <div>
+            <AccordionTitle title={title} setControlledAccordionCollapsed={setControlledAccordionCollapsed}
+                            accordionCollapsed={accordionCollapsed}/>
+            {!accordionCollapsed && <AccordionBody items={items} onClick={onClick}/>}
+        </div>
+    );
 
 
 };
 
+export type AccordionBodyPropsType = {
+    items: Array<ItemType>
+    onClick: (value: any) => void
+}
 
 
-export function AccordionBody() {
+export function AccordionBody(props: AccordionBodyPropsType) {
     return <>
 
         <ul>
-            <li>
-                1
-            </li>
-            <li>
-                2
-            </li>
-            <li>
-                3
-            </li>
+            {props.items.map((i) => <li onClick={() => {
+                props.onClick(i.value);
+            }} key={i.value}>{i.title}</li>)}
 
         </ul>
 
@@ -42,19 +53,19 @@ export function AccordionBody() {
 
 type AccordionTitlePropsType = {
     title: string
-    setControlledAccordionCollapsed: (accordionCollapsed:boolean) => void
+    setControlledAccordionCollapsed: (accordionCollapsed: boolean) => void
     accordionCollapsed: boolean
 }
 
-export function   AccordionTitle(props: AccordionTitlePropsType){
+export function AccordionTitle(props: AccordionTitlePropsType) {
 
     function onClick() {
-        props.setControlledAccordionCollapsed(!props.accordionCollapsed)
+        props.setControlledAccordionCollapsed(!props.accordionCollapsed);
     }
 
     return (
         <h3 onClick={onClick}>--{props.title}-- </h3>
-    )
+    );
 
 }
 

@@ -7,7 +7,11 @@ import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrilledOnOff} from './components/OnOff/UncontrolledOnOff';
+import {ItemType, Select} from './components/Select/Select';
 
+const items: Array<ItemType> = [{title: 'PSSS',value: '1'},{title: 'Ppppp',value: '2'}, {title: 'tttt', value: '3'},
+
+]
 function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(5)
@@ -24,17 +28,18 @@ function onChange() {
             {/*<PageTitle title={'PageTitle component'}/>*/}
             {/*<PageTitle title={'Main Text'}/>*/}
             {/*<Rating value={5}/>*/}
-            <Rating value={ratingValue} onClick={setRatingValue}/>
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
             {/*<Rating value={5}/>*/}
             {/*<Rating value={ratingValue}/>*/}
 {/*<UncontrolledAccordion title={'РРР'} />*/}
-            <UncontrolledRating />
-
-            <UncontrilledOnOff on={switchOn} onChange={()=>setSwitchOn(!switchOn)} />
-            <OnOff on={false} />
+{/*            <UncontrolledRating />*/}
+            <Select onChange={()=> {
+                console.log('Hello Man');}} value={'Click me'} items={items}/>
+            {/*<UncontrilledOnOff on={switchOn} onChange={()=>setSwitchOn(!switchOn)} />*/}
+            {/*<OnOff on={false} />*/}
             {/*<OnOff on={true} />*/}
             {/*<OnOff on={false} />*/}
-            <Accordion accordionCollapsed={accordionCollapsed} title={'Пиво'} setControlledAccordionCollapsed={()=>{setControlledAccordionCollapsed(!accordionCollapsed)}}/>
+            {/*<Accordion accordionCollapsed={accordionCollapsed} title={'Пиво'} setControlledAccordionCollapsed={()=>{setControlledAccordionCollapsed(!accordionCollapsed)}}/>*/}
 
 
         </div>
