@@ -1,9 +1,6 @@
 import React, {FC} from 'react';
+import {ItemType} from '../Select/Select';
 
-type ItemType = {
-    title: string
-    value: any
-}
 export type AccordionPropsType = {
     accordionCollapsed: boolean
     title: string
